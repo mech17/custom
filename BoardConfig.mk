@@ -206,10 +206,6 @@ endif
 
 # system.prop
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
-
-# Seccomp Filter
-BOARD_SECCOMP_POLICY := \
-       $(LOCAL_PATH)/seccomp
        
 # SELinux
 BOARD_SEPOLICY_DIRS := \
@@ -269,3 +265,7 @@ endif
 
 DEVICE_MATRIX_FILE   := $(LOCAL_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+
+# Create vendor partition
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4

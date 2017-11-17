@@ -275,6 +275,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/configs/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny
 
+# Add vendor minijail policy for mediacodec service for Android O
+PRODUCT_COPY_FILES += device/mediatek/common/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy:mtk
+
+# Add vendor minijail policy for mediaextractor service for Android O
+PRODUCT_COPY_FILES += device/mediatek/common/seccomp_policy/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy:mtk
 
 # MTK Helpers 
 PRODUCT_PACKAGES += \
