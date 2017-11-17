@@ -472,3 +472,68 @@ PRODUCT_PACKAGES += \
 # GPS force mode
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.force.gps.mode=gnss
+
+#mtk_hidl
+
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl-mediatek \
+    android.hardware.bluetooth@1.0-service-mediatek
+
+# Audio HAL
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl-mediatek \
+    android.hardware.audio.effect@2.0-impl
+
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.0-impl
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-service-mediatek
+  
+# Keymaster HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
+# Gatekeeper HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    
+    android.hardware.gatekeeper@1.0-service
+
+# vibrator HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
+# light HAL
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl-mediatek \
+    android.hardware.light@2.0-service-mediatek
+
+# sensor HAL HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl-mediatek \
+    android.hardware.sensors@1.0-service-mediatek
+
+# PQ HIDL
+PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.pq@2.0-service \
+    vendor.mediatek.hardware.pq@2.0-impl
+
+
+# thermal HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-service
+
+# APE service HIDL
+PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.mtkcodecservice@1.1-impl \
+    vendor.mediatek.hardware.mtkcodecservice@1.1-service
+
+PRODUCT_PACKAGES += \
+    android.hardware.oemlock@1.0-service \
+    android.hardware.oemlock@1.0-impl
