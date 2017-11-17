@@ -269,3 +269,7 @@ DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 # Create vendor partition
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+
+TARGET_BOARD_KERNEL_HEADERS := \
+	   device/leeco/x3/kernel-headers/common \
+	   device/leeco/x3/kernel-headers/mt6795
