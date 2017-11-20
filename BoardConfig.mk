@@ -264,7 +264,7 @@ endif
 #ro.setupwizard.rotation_locked=true
 
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 
 # Create vendor partition
 TARGET_COPY_OUT_VENDOR := vendor
