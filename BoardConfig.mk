@@ -67,6 +67,7 @@ TARGET_KERNEL_CONFIG := x500_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 LZMA_RAMDISK_TARGETS := boot,recovery
+BOARD_USES_FULL_RECOVERY_IMAGE := true
 
 # build old-style zip files (required for ota updater)
 BLOCK_BASED_OTA := false
