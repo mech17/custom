@@ -323,10 +323,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/manifest.xml \
     $(LOCAL_PATH)/compatibility_matrix.xml:system/compatibility_matrix.xml
 
-# Fingerprint Sensor
+# Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd \
-    android.hardware.biometrics.fingerprint@2.1-impl
+    android.hardware.biometrics.fingerprint.microarray@2.1-service
     
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -434,8 +433,8 @@ PRODUCT_PACKAGES += \
 	
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+    android.hardware.keymaster@3.0-impl 
+#    android.hardware.keymaster@3.0-service
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.vndk.version=26.1.0 \
@@ -493,13 +492,13 @@ PRODUCT_PACKAGES += \
   
 # Keymaster HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+    android.hardware.keymaster@3.0-impl
+#    android.hardware.keymaster@3.0-service
 
 # Gatekeeper HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-impl 
+#    android.hardware.gatekeeper@1.0-service
 
 # vibrator HAL
 PRODUCT_PACKAGES += \

@@ -1412,5 +1412,12 @@ service guiext-server /system/bin/guiext-server
 service kpoc_charger /system/bin/kpoc_charger
     class charger
 
-#oreo 
-mkdir /dev/block 0711 root
+# Trustzone
+    mkdir /data/tee
+    chown system system /data/tee
+    chmod 0755 /data/tee
+
+    write /data/teec.log 0
+    chmod 0660 /data/teec.log
+    chown system system /data/teec.log
+    restorecon /data/teec.log
