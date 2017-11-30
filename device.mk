@@ -18,6 +18,12 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 # Vendor
 $(call inherit-product, vendor/leeco/x3/x3-vendor-blobs.mk)
 
+#mtk common oreo stuff
+$(call inherit-product, vendor/mediatek/VendorProduct.mk)
+
+
+$(call inherit-product, vendor/mediatek/VendorConfig.mk)
+
 # Overlay Folder
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
