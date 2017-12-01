@@ -268,10 +268,6 @@ endif
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 
-# Create vendor partition
-TARGET_COPY_OUT_VENDOR := vendor
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-
 #TARGET_BOARD_KERNEL_HEADERS := \
 #	   device/leeco/x3/headers/common/kernel-headers \
 #	   device/leeco/x3/headers/mt6795/kernel-headers
