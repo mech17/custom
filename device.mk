@@ -18,17 +18,17 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 # Vendor
 $(call inherit-product, vendor/leeco/x3/x3-vendor-blobs.mk)
 
-#mtk common oreo stuff
-$(call inherit-product, vendor/mediatek/VendorProduct.mk)
+# Folder path
+LOCAL_PATH := device/leeco/x3
+MTK_PATH := vendor/mediatek
 
+#Mtk common oreo stuff
+$(call inherit-product, $(MTK_PATH)/VendorProduct.mk)
 
-$(call inherit-product, vendor/mediatek/VendorConfig.mk)
+$(call inherit-product, $(MTK_PATH)/VendorConfig.mk)
 
 # Overlay Folder
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-# Folder path
-LOCAL_PATH := device/leeco/x3
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal xxhdpi
