@@ -41,7 +41,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     power.default \
     power.mt6795 \
-    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-impl 
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -151,7 +151,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
     $(LOCAL_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.configfs.rc:root/init.usb.configfs.rc \
-    $(LOCAL_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc \
+    $(LOCAL_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
 
 
 PRODUCT_COPY_FILES += \
@@ -415,7 +415,7 @@ PRODUCT_PACKAGES += \
 #CAMERA
 PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-impl
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
