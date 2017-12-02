@@ -212,18 +212,7 @@ endif
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
        
 # SELinux
-BOARD_SEPOLICY_DIRS := \
-       device/leeco/x3/basic/non_plat \
-       device/leeco/x3/bsp/non_plat \
-       device/leeco/x3/full/non_plat
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
-       device/leeco/x3/basic/plat_public \
-       device/leeco/x3/bsp/plat_public \
-       device/leeco/x3/full/plat_public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
-       device/leeco/x3/basic/plat_private \
-       device/leeco/x3/bsp/plat_private \
-       device/leeco/x3/full/plat_private
+BOARD_SEPOLICY_DIRS += device/leeco/x3/sepolicy
 
 # Legacy blobs
 TARGET_NEEDS_TEXT_RELOCATIONS := true 

@@ -1,8 +1,0 @@
-
-
-#############################
-# System/bin files
-#
-/system/bin/terservice u:object_r:terservice_exec:s0
-
-
