@@ -329,10 +329,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/manifest.xml \
     $(LOCAL_PATH)/compatibility_matrix.xml:system/compatibility_matrix.xml
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint.microarray@2.1-service
-    
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl 
