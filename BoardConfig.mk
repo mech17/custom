@@ -210,7 +210,8 @@ endif
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
        
 # SELinux
-BOARD_SEPOLICY_DIRS += device/leeco/x3/sepolicy
+BOARD_SEPOLICY_DIRS := \
+    device/leeco/x3/sepolicy
 
 # Legacy blobs
 TARGET_NEEDS_TEXT_RELOCATIONS := true 
