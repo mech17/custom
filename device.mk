@@ -289,8 +289,7 @@ PRODUCT_COPY_FILES += device/leeco/x3/seccomp_policy/mediaextractor.policy:syste
 
 # MTK Helpers 
 PRODUCT_PACKAGES += \
-   libccci_util   \
-   libmtk_symbols
+   libccci_util   
 
 # Sensor Calibration
 PRODUCT_PACKAGES += libem_sensor_jni
