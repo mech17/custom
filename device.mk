@@ -35,7 +35,7 @@ PRODUCT_AAPT_CONFIG := normal xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
-#TARGET_OTA_ASSERT_DEVICE := x3,X500,X507,X509,X3,x500,x507,x509,X502,x502
+TARGET_OTA_ASSERT_DEVICE := x3,X500,X507,X509,X3,x500,x507,x509,X502,x502,X3_HK
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -176,22 +176,22 @@ PRODUCT_COPY_FILES += \
 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/permissions/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml\
-    $(LOCAL_PATH)/configs/media/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/configs/mtk_clear_motion.cfg:system/etc/mtk_clear_motion.cfg
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:vendor/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:vendor/etc/permissions/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_ffmpeg.xml:vendor/etc/media_codecs_ffmpeg.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_mediatek_audio.xml:vendor/etc/media_codecs_mediatek_audio.xml\
+    $(LOCAL_PATH)/configs/media/media_codecs_mediatek_video.xml:vendor/etc/media_codecs_mediatek_video.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:vendor/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles.xml:vendor/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/mtk_clear_motion.cfg:vendor/etc/mtk_clear_motion.cfg
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_device.xml:system/etc/audio_device.xml \
-    $(LOCAL_PATH)/configs/audio/audio_em.xml:system/etc/audio_em.xml \
-    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio/audio_device.xml:vendor/etc/audio_device.xml \
+    $(LOCAL_PATH)/configs/audio/audio_em.xml:vendor/etc/audio_em.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy.conf:vendor/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_param/AudioParamOptions.xml:system/etc/audio_param/AudioParamOptions.xml
+    $(LOCAL_PATH)/configs/audio_param/AudioParamOptions.xml:vendor/etc/audio_param/AudioParamOptions.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
@@ -203,18 +203,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/android.hardware.camera.raw.xml:system/etc/permissions/android.hardware.camera.raw.xml 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/bluetooth/auto_pair_blacklist.conf:system/etc/bluetooth/auto_pair_blacklist.conf \
-    $(LOCAL_PATH)/configs/bluetooth/auto_pair_devlist.conf:system/etc/bluetooth/auto_pair_devlist.conf \
-    $(LOCAL_PATH)/configs/bluetooth/btconfig.xml:system/etc/bluetooth/btconfig.xml \
-    $(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
-    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
-    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf.debug:system/etc/bluetooth/bt_stack.conf.debug \
-    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf.sqc:system/etc/bluetooth/bt_stack.conf.sqc
+    $(LOCAL_PATH)/configs/bluetooth/auto_pair_blacklist.conf:vendor/etc/bluetooth/auto_pair_blacklist.conf \
+    $(LOCAL_PATH)/configs/bluetooth/btconfig.xml:vendor/etc/bluetooth/btconfig.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl \
@@ -248,7 +238,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/radvd/radvd.conf:system/etc/radvd/radvd.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/slp_conf:system/etc/slp_conf \
     $(LOCAL_PATH)/configs/clatd.conf:system/etc/clatd.conf \
     $(LOCAL_PATH)/configs/custom.conf:system/etc/custom.conf \
     $(LOCAL_PATH)/configs/mtklog-config.prop:system/etc/mtklog-config.prop \
@@ -261,9 +250,9 @@ PRODUCT_COPY_FILES += \
     
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-    $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
-    $(LOCAL_PATH)/configs/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny
+    $(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:vendor/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/configs/hostapd/hostapd.accept:vendor/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/configs/hostapd/hostapd.deny:vendor/etc/hostapd/hostapd.deny
 
 # Add vendor minijail policy for mediacodec service for Android O
 PRODUCT_COPY_FILES += device/leeco/x3/seccomp_policy/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy:mtk
