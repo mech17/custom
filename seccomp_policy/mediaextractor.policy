@@ -5,3 +5,5 @@ ioprio_set: 1
 unlinkat: 1
 setsockopt: 1
 clock_gettime: 1
+# ffmpeg needs this
+nanosleep: 1
