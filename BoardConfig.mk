@@ -270,3 +270,11 @@ DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 #TARGET_BOARD_KERNEL_HEADERS := \
 #	   device/leeco/x3/headers/common/kernel-headers \
 #	   device/leeco/x3/headers/mt6795/kernel-headers
+
+#Libshim Configuration
+LIBSHIM_XLOG_SYMBOLS :=true
+LIBSHIM_SND_SYMBOLS := true
+LIBSHIM_UI_SYMBOLS := true
+LIBSHIM_GUI_SYMBOLS := true
+LIBSHIM_OMX_SYMBOLS := true
+LIBSHIM_AGPS_SYMBOLS := true
