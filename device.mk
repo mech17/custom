@@ -37,12 +37,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Recovery allowed devices
 #TARGET_OTA_ASSERT_DEVICE := x3,X500,X507,X509,X3,x500,x507,x509,X502,x502
 
-# Power
-PRODUCT_PACKAGES += \
-    power.default \
-    power.mt6795 \
-    android.hardware.power@1.0-impl 
-
 # Camera
 PRODUCT_PACKAGES += \
     Snap
@@ -102,7 +96,6 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    lib_driver_cmd_mt66xx \
     android.hardware.wifi@1.0-service \
     libwpa_client \
     wificond \
@@ -111,9 +104,6 @@ PRODUCT_PACKAGES += \
  
 # Media	
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 
@@ -197,7 +187,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:system/etc/audio_device.xml \
-    $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/configs/audio/audio_em.xml:system/etc/audio_em.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf
 
@@ -235,9 +224,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
     
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/ril_conf/apns-conf.xml:system/etc/apns-conf.xml \
-    $(LOCAL_PATH)/configs/ril_conf/ecc_list.xml:system/etc/ecc_list.xml \
-    $(LOCAL_PATH)/configs/ril_conf/spn-conf.xml:system/etc/spn-conf.xml
+    $(LOCAL_PATH)/configs/ril_conf/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/.tp/thermal.conf:system/etc/.tp/thermal.conf \
@@ -268,9 +255,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mtk_omx_core.cfg:system/etc/mtk_omx_core.cfg \
     $(LOCAL_PATH)/configs/perfservboosttbl.txt:system/etc/perfservboosttbl.txt \
     $(LOCAL_PATH)/configs/perfservscntbl.txt:system/etc/perfservscntbl.txt
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
     
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
@@ -299,15 +283,6 @@ PRODUCT_PACKAGES += \
     muxreport \
     terservice
 
-# Display
-PRODUCT_PACKAGES += \
-    libion
-    
-# GPS
-PRODUCT_PACKAGES += \
-    gps.mt6795 \
-    libcurl
-
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc 
@@ -331,10 +306,6 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint.microarray@2.1-service
-    
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl 
     
 # Light HAL
 PRODUCT_PACKAGES += \
@@ -504,16 +475,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl 
 #    android.hardware.gatekeeper@1.0-service
-
-# vibrator HAL
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
-
-# light HAL
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl-mediatek \
-    android.hardware.light@2.0-service-mediatek
 
 # sensor HAL HIDL
 PRODUCT_PACKAGES += \
