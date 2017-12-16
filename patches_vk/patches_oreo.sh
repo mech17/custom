@@ -4,7 +4,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="system/core bionic frameworks/av"
+dirs="system/core bionic"
 
 # red + nocolor
 RED='\033[0;31m'
