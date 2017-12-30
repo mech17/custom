@@ -1,8 +1,8 @@
 # MTK project .rc configure
 
-import init.mt6795.usb.rc
-import init.modem.rc
-import init.trustonic.rc
+import /system/vendor/etc/init/hw/init.mt6795.usb.rc
+import ${ro.mtkrc.path}init.modem.rc
+import /system/vendor/etc/init/hw/init.trustonic.rc
 
 on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
@@ -23,13 +23,13 @@ on post-fs-data
     chown system system /dev/ttyMT3
 
 # STP, WMT, GPS, FM and BT Driver
-#   insmod /system/lib/modules/mtk_hif_sdio.ko
-#   insmod /system/lib/modules/mtk_stp_wmt.ko
-#   insmod /system/lib/modules/mtk_stp_uart.ko
-#   insmod /system/lib/modules/mtk_stp_gps.ko
-#   insmod /system/lib/modules/mtk_stp_bt.ko
-#   insmod /system/lib/modules/mtk_fm_drv.ko
-#   insmod /system/lib/modules/mtk_wmt_wifi.ko
+#   insmod /system/vendor/lib/modules/mtk_hif_sdio.ko
+#   insmod /system/vendor/lib/modules/mtk_stp_wmt.ko
+#   insmod /system/vendor/lib/modules/mtk_stp_uart.ko
+#   insmod /system/vendor/lib/modules/mtk_stp_gps.ko
+#   insmod /system/vendor/lib/modules/mtk_stp_bt.ko
+#   insmod /system/vendor/lib/modules/mtk_fm_drv.ko
+#   insmod /system/vendor/lib/modules/mtk_wmt_wifi.ko
 
 #SMB
     chown system system /proc/smb/ScreenComm
@@ -46,7 +46,7 @@ on post-fs-data
 #    chmod 0660 /dev/wmtdetect
 #    chown system system /dev/wmtdetect
  		
-    mknod /dev/wmtWifi c 153 0
+#   mknod /dev/wmtWifi c 153 0
     chmod 0660 /dev/wmtWifi
     chown system system /dev/wmtWifi
 
@@ -128,10 +128,10 @@ on post-fs-data
 
 #Disable for one Single loader
 # Load WiFi Driver
-#   insmod /system/lib/modules/wlan_mt.ko
+#   insmod /system/vendor/lib/modules/wlan_mt.ko
 
 # Char device for BT 3.0 HS
-    mknod /dev/ampc0 c 151 0
+#   mknod /dev/ampc0 c 151 0
     chown bluetooth bluetooth /dev/ampc0
     chmod 0660 /dev/ampc0
 
@@ -154,7 +154,7 @@ on init
     # 
     # export SECONDARY_STORAGE /storage/sdcard1
 
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+service fuse_usbotg /system/vendor/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
     class late_start
     disabled
 
@@ -162,13 +162,13 @@ service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/
 # Connectivity related services (Begin)
 #
 
-service wmt_loader /system/bin/wmt_loader
+service wmt_loader /system/vendor/bin/wmt_loader
 	class core
 	user root
 	group root
 	oneshot
 
-service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
+service 66xx_launcher /system/vendor/bin/6620_launcher -m 4 -p /system/vendor/etc/firmware/
     user system
     group system
 	class core
@@ -176,7 +176,7 @@ service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
 on property:service.wcn.coredump.mode=2
 start stp_dump
 
-service stp_dump /system/bin/stp_dump3
+service stp_dump /system/vendor/bin/stp_dump3
 	user root
 	group root
 	class core
@@ -191,13 +191,13 @@ on property:persist.sys.le_fast_chrg_enable=0
 # add by letv for reduced power rate when normal charge be selected end
 
 # goodix fingerprint begin
-service goodixfpd /system/bin/goodixfingerprintd
+service goodixfpd /system/vendor/bin/goodixfingerprintd
     class main
     user system
     group system
 
-#service fingerprintd /system/bin/fingerprintd
-#    class main
-#    user system
-#    group system
+service fingerprintd /system/vendor/bin/fingerprintd
+    class main
+    user system
+    group system
 # goodix fingerprint end
