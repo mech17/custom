@@ -21,6 +21,12 @@ $(call inherit-product, vendor/leeco/x3/x3-vendor-blobs.mk)
 # Folder path
 LOCAL_PATH := device/leeco/x3
 MTK_PATH := vendor/mediatek
+TARGET_COPY_OUT_VENDOR := system/vendor
+MTK_COMMON_RC_PATH := $(TARGET_COPY_OUT_VENDOR)/etc/init/
+MTK_TARGET_VENDOR_RC = $(TARGET_COPY_OUT_VENDOR)/etc/init/hw/
+
+#Mtk vendor rc path
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.mtkrc.path=/system/vendor/etc/init/
 
 #Mtk common oreo stuff
 $(call inherit-product, $(MTK_PATH)/VendorProduct.mk)
@@ -130,19 +136,18 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/enableswap.sh:root/enableswap.sh \
-    $(LOCAL_PATH)/ramdisk/factory_init.project.rc:root/factory_init.project.rc \
-    $(LOCAL_PATH)/ramdisk/factory_init.rc:root/factory_init.rc \
     $(LOCAL_PATH)/ramdisk/fstab.mt6795:root/fstab.mt6795 \
-    $(LOCAL_PATH)/ramdisk/init.modem.rc:root/init.modem.rc \
-    $(LOCAL_PATH)/ramdisk/init.mt6795.rc:root/init.mt6795.rc \
-    $(LOCAL_PATH)/ramdisk/init.mt6795.usb.rc:root/init.mt6795.usb.rc \
-    $(LOCAL_PATH)/ramdisk/init.project.rc:root/init.project.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
-    $(LOCAL_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
-    $(LOCAL_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
+    $(LOCAL_PATH)/ramdisk/init.mt6795.rc:root/init.mt6795.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.configfs.rc:root/init.usb.configfs.rc \
-    $(LOCAL_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
-
+    $(LOCAL_PATH)/ramdisk/init.mt6795.usb.rc:$(MTK_TARGET_VENDOR_RC)/init.mt6795.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.project.rc:$(MTK_TARGET_VENDOR_RC)/init.project.rc \
+    $(LOCAL_PATH)/ramdisk/init.project.rc:$(MTK_TARGET_VENDOR_RC)/init.trustonic.rc \
+    $(LOCAL_PATH)/ramdisk/factory_init.project.rc:$(MTK_TARGET_VENDOR_RC)/factory_init.project.rc \
+    $(LOCAL_PATH)/ramdisk/factory_init.rc:$(MTK_TARGET_VENDOR_RC)/factory_init.rc \
+    $(LOCAL_PATH)/ramdisk/init.modem.rc:$(MTK_COMMON_RC_PATH)/init.modem.rc \
+    $(LOCAL_PATH)/ramdisk/init.mal.rc:$(MTK_COMMON_RC_PATH)/init.mal.rc \
+    $(LOCAL_PATH)/ramdisk/init.volte.rc:$(MTK_COMMON_RC_PATH)/init.volte.rc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
