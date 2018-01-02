@@ -1,4 +1,5 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+-include vendor/mediatek/VendorConfig.mk
 
 # Language
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
@@ -27,11 +28,6 @@ MTK_TARGET_VENDOR_RC = $(TARGET_COPY_OUT_VENDOR)/etc/init/hw/
 
 #Mtk vendor rc path
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.mtkrc.path=/system/vendor/etc/init/
-
-#Mtk common oreo stuff
-$(call inherit-product, $(MTK_PATH)/VendorProduct.mk)
-
-$(call inherit-product, $(MTK_PATH)/VendorConfig.mk)
 
 # Overlay Folder
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
