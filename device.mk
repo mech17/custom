@@ -134,7 +134,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/enableswap.sh:root/enableswap.sh \
     $(LOCAL_PATH)/ramdisk/fstab.mt6795:root/fstab.mt6795 \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
-    $(LOCAL_PATH)/ramdisk/init.mt6795.rc:root/init.mt6795.rc \
+    $(LOCAL_PATH)/ramdisk/init.mt6795.rc:$(MTK_TARGET_VENDOR_RC)/init.mt6795.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.configfs.rc:root/init.usb.configfs.rc \
     $(LOCAL_PATH)/ramdisk/init.mt6795.usb.rc:$(MTK_TARGET_VENDOR_RC)/init.mt6795.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.project.rc:$(MTK_TARGET_VENDOR_RC)/init.project.rc \
