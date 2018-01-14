@@ -119,7 +119,6 @@ BOARD_CONNECTIVITY_VENDOR := MediaTek
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/leeco/x3/ril
 BOARD_CONNECTIVITY_MODULE := conn_soc
 
 # Display
@@ -229,6 +228,7 @@ TARGET_NEEDS_TEXT_RELOCATIONS := true
 # Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_mtk
 
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
