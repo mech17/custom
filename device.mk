@@ -294,136 +294,67 @@ PRODUCT_PACKAGES += \
     
 # Light HAL
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl
-    
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
+    lights.mt6795    
+
+#Sensor HAL
 PRODUCT_PACKAGES += \
-    context_hub.default \
     android.hardware.sensors@1.0-impl \
-    android.hardware.contexthub@1.0-impl
+    android.hardware.sensors@1.0-service
 
-# HW Composer
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-impl
-
-# new gatekeeper HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl
-    
-#ifeq ($(ENABLE_TREBLE), true)
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-service 
-#endif
-
-# Thermal packages
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
-
+#Audio HIDL
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.broadcastradio@1.0-impl \
-    android.hardware.soundtrigger@2.0-impl
-    
-# Boot control
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl 
-
-#ifeq ($(ENABLE_TREBLE), true)
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-service
-#endif
-
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-
-PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
-    android.hardware.bluetooth@1.0-service \
-    android.hardware.contexthub@1.0-service \
-    android.hardware.gnss@1.0-service \
-    android.hardware.drm@1.0-service \
-    android.hardware.light@2.0-service \
-    android.hardware.memtrack@1.0-service \
-    android.hardware.nfc@1.0-service \
-    android.hardware.power@1.0-service \
-    android.hardware.sensors@1.0-service \
-    android.hardware.thermal@1.0-service \
-    android.hardware.vr@1.0-service 
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl 
+#    android.hardware.soundtrigger@2.0-impl \
 
-# RenderScript HAL
+# Power HAL
 PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
+    android.hardware.power@1.0-impl
 
-#gralloc	
+#gralloc/graphics HAL/HW Composer
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl 
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    libgralloc_extra \
+    libgui_ext
 	
 #memtrack
 PRODUCT_PACKAGES += \
-	android.hardware.memtrack@1.0-impl
-	
-#drm HAL
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
 
-#CAMERA
+# Camera HAL
 PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
+    libbt-vendor
 
 #GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
+
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-service
 
 #USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
-
-# Test HAL for hwbinder performance benchmark.
-PRODUCT_PACKAGES += \
-    android.hardware.tests.libhwbinder@1.0-impl
-	
-# Test HAL for FMQ performance benchmark.
-PRODUCT_PACKAGES += \
-    android.hardware.tests.msgq@1.0-impl
-	
-# Keymaster HAL
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl 
-#    android.hardware.keymaster@3.0-service
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.vndk.version=26.1.0 \
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0.vndk-sp\
-    android.hardware.graphics.allocator@2.0.vndk-sp\
-    android.hardware.graphics.mapper@2.0.vndk-sp\
-    android.hardware.graphics.common@1.0.vndk-sp\
-    android.hidl.base@1.0.vndk-sp\
-    libhwbinder.vndk-sp\
-    libbase.vndk-sp\
-    libcutils.vndk-sp\
-    libhardware.vndk-sp\
-    libhidlbase.vndk-sp\
-    libhidltransport.vndk-sp\
-    libutils.vndk-sp\
-    libc++.vndk-sp\
-    libRS_internal.vndk-sp\
-    libRSDriver.vndk-sp\
-    libRSCpuRef.vndk-sp\
-    libbcinfo.vndk-sp\
-    libblas.vndk-sp\
-    libft2.vndk-sp\
-    libpng.vndk-sp\
-    libcompiler_rt.vndk-sp\
-    libbacktrace.vndk-sp\
-    libunwind.vndk-sp\
-    liblzma.vndk-sp
 
 PRODUCT_PACKAGES += \
     PerformanceControl \
@@ -433,24 +364,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.force.gps.mode=gnss
 
-#mtk_hidl
-
-# Bluetooth HAL
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl-mediatek \
-    android.hardware.bluetooth@1.0-service-mediatek
-
-# Audio HAL
-PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl-mediatek \
-    android.hardware.audio.effect@2.0-impl
-
-PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.0-impl
-
-PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-service-mediatek
-  
 # Keymaster HIDL
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
@@ -461,28 +374,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl 
 #    android.hardware.gatekeeper@1.0-service
 
-# sensor HAL HIDL
+# Thermal HAL
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl-mediatek \
-    android.hardware.sensors@1.0-service-mediatek
-
-# PQ HIDL
-PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.pq@2.0-service \
-    vendor.mediatek.hardware.pq@2.0-impl
-
-
-# thermal HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-service
-
-# APE service HIDL
-PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.mtkcodecservice@1.1-impl \
-    vendor.mediatek.hardware.mtkcodecservice@1.1-service
-
-PRODUCT_PACKAGES += \
-    android.hardware.oemlock@1.0-service \
-    android.hardware.oemlock@1.0-impl
+    android.hardware.thermal@1.0-impl \
+	android.hardware.thermal@1.0-service
