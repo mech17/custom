@@ -154,7 +154,7 @@ on init
     # 
     # export SECONDARY_STORAGE /storage/sdcard1
 
-service fuse_usbotg /system/vendor/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
     class late_start
     disabled
 
@@ -162,13 +162,13 @@ service fuse_usbotg /system/vendor/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/me
 # Connectivity related services (Begin)
 #
 
-service wmt_loader /system/vendor/bin/wmt_loader
+service wmt_loader /system/bin/wmt_loader
 	class core
 	user root
 	group root
 	oneshot
 
-service 66xx_launcher /system/vendor/bin/6620_launcher -m 4 -p /system/vendor/etc/firmware/
+service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
     user system
     group system
 	class core
@@ -176,7 +176,7 @@ service 66xx_launcher /system/vendor/bin/6620_launcher -m 4 -p /system/vendor/et
 on property:service.wcn.coredump.mode=2
 start stp_dump
 
-service stp_dump /system/vendor/bin/stp_dump3
+service stp_dump /system/bin/stp_dump3
 	user root
 	group root
 	class core
@@ -191,12 +191,12 @@ on property:persist.sys.le_fast_chrg_enable=0
 # add by letv for reduced power rate when normal charge be selected end
 
 # goodix fingerprint begin
-service goodixfpd /system/vendor/bin/goodixfingerprintd
+service goodixfpd /system/bin/goodixfingerprintd
     class main
     user system
     group system
 
-service fingerprintd /system/vendor/bin/fingerprintd
+service fingerprintd /system/bin/fingerprintd
     class main
     user system
     group system

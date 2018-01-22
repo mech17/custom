@@ -22,7 +22,7 @@ on post-fs-data
     # Encrypt phone function
     setprop vold.post_fs_data_done 1
 
-service md_minilog_util /system/vendor/bin/md_minilog_util
+service md_minilog_util /system/bin/md_minilog_util
     user radio
     disabled
     oneshot
@@ -31,26 +31,26 @@ service md_minilog_util /system/vendor/bin/md_minilog_util
 #  Modem related services (Begin)
 #
 
-service permission_check /system/vendor/bin/permission_check
+service permission_check /system/bin/permission_check
     class main
     user root
     group system radio
     oneshot
 
-service ccci_rpcd /system/vendor/bin/ccci_rpcd
+service ccci_rpcd /system/bin/ccci_rpcd
     user radio
     group radio system
     class core
     oneshot
 
-service pppd_gprs /system/vendor/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepeerdns nodetach
+service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepeerdns nodetach
     user root
     group radio cache inet misc
     disabled
     oneshot
 
 #Add by T.Zh for ppp daemon
-service pppd /system/vendor/bin/pppd file /data/misc/ppp/ppp_options
+service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
     user root
     disabled 
     oneshot
@@ -60,7 +60,7 @@ service pppd /system/vendor/bin/pppd file /data/misc/ppp/ppp_options
 #  Modem related services (End)
 #
 
-service terservice /system/vendor/bin/terservice
+service terservice /system/bin/terservice
     class core
     user radio
     group radio cache inet misc
