@@ -134,6 +134,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/enableswap.sh:root/enableswap.sh \
     $(LOCAL_PATH)/ramdisk/fstab.mt6795:root/fstab.mt6795 \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
+    $(LOCAL_PATH)/ramdisk/init.mt6795.rc:root/init.mt6795.rc \
     $(LOCAL_PATH)/ramdisk/init.mt6795.rc:$(MTK_TARGET_VENDOR_RC)/init.mt6795.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.configfs.rc:root/init.usb.configfs.rc \
     $(LOCAL_PATH)/ramdisk/init.mt6795.usb.rc:$(MTK_TARGET_VENDOR_RC)/init.mt6795.usb.rc \
@@ -320,10 +321,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.mapper@2.0-impl \
-    libgralloc_extra \
-    libgui_ext
-	
+    android.hardware.graphics.mapper@2.0-impl
+
 #memtrack
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
