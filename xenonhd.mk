@@ -4,8 +4,8 @@ DEVICE_PATH := device/leeco/x3
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common XenonHD stuff.
+$(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
@@ -18,7 +18,7 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_x3
+PRODUCT_NAME := xenonhd_x3
 PRODUCT_DEVICE := x3
 PRODUCT_BRAND := LeEco
 PRODUCT_MODEL := Le 1s
