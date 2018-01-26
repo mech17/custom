@@ -325,7 +325,7 @@ PRODUCT_PACKAGES += \
 #    android.hardware.soundtrigger@2.0-impl \
 
 # Power HAL
-PRODUCT_PACKAGES += \ðŸŽðŸŽ
+PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl
 
 #gralloc/graphics HAL/HW Composer
