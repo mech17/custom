@@ -195,8 +195,5 @@ BOARD_RED_LED_PATH := "/sys/class/leds/red"
 BOARD_GREEN_LED_PATH := "/sys/class/leds/green"
 BOARD_BLUE_LED_PATH := "/sys/class/leds/blue"
 
-# Tethering
-PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
-
 # SenserHal
 TARGET_SENSORS_DEVICE_API_VERSION := SENSORS_DEVICE_API_VERSION_1_1
