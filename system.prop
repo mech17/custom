@@ -222,3 +222,5 @@ persist.sys.display.clearMotion=1
 ro.mtk_clearmotion_support=1
 # Storage
 ro.sys.sdcardfs=true
+# Media
+persist.media.treble_omx=false
