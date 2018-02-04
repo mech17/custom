@@ -202,8 +202,5 @@ BOARD_BLUE_LED_PATH := "/sys/class/leds/blue"
 # SenserHal
 TARGET_SENSORS_DEVICE_API_VERSION := SENSORS_DEVICE_API_VERSION_1_1
 
-# Binder API version
-TARGET_USES_64_BIT_BINDER := true
-
 #Treble support 
 PRODUCT_FULL_TREBLE := false
