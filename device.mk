@@ -387,9 +387,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service
 
 # Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
+#PRODUCT_PACKAGES += \
+#    android.hardware.sensors@1.0-impl \
+#    android.hardware.sensors@1.0-service
 
 # Drm
 PRODUCT_PACKAGES += \
