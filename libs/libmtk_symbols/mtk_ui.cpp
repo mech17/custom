@@ -17,6 +17,8 @@
 #define LOG_TAG "DECKER_SHIM"
 
 extern "C" {
+    void _ZN7android13GraphicBufferC1EjjijjP13native_handleb() {}
+
     void _ZN7android19GraphicBufferMapper9lockYCbCrEPK13native_handlejRKNS_4RectEP13android_ycbcr(buffer_handle_t, uint32_t, const android::Rect&, android_ycbcr*);
 
     void _ZN7android19GraphicBufferMapper9lockYCbCrEPK13native_handleiRKNS_4RectEP13android_ycbcr(buffer_handle_t handle, int usage, const android::Rect& bounds, android_ycbcr *ycbcr) {
