@@ -493,7 +493,7 @@ service ccci_mdinit /system/bin/ccci_mdinit 0
 service nvram_daemon /system/bin/nvram_daemon
     class main
     user root
-    group system
+    group root system
     oneshot
 
 service factory_no_image /system/bin/factory
