@@ -313,6 +313,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/manifest.xml:system/vendor/manifest.xml
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/ramdisk/etc/loggy.sh:root/loggy.sh
+
 # GPS force mode
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.force.gps.mode=gnss
