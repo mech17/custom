@@ -184,10 +184,10 @@ service stp_dump /system/bin/stp_dump3
 	oneshot
 
 # add by letv for reduced power rate when normal charge be selected begin
-on property:persist.sys.le_fast_chrg_enable=1
-    write /sys/class/power_supply/bq2589x-Wall/disable_quick_charge 0
-on property:persist.sys.le_fast_chrg_enable=0
-    write /sys/class/power_supply/bq2589x-Wall/disable_quick_charge 1
+#on property:persist.sys.le_fast_chrg_enable=1
+#    write /sys/class/power_supply/bq2589x-Wall/disable_quick_charge 0
+#on property:persist.sys.le_fast_chrg_enable=0
+#    write /sys/class/power_supply/bq2589x-Wall/disable_quick_charge 1
 # add by letv for reduced power rate when normal charge be selected end
 
 # goodix fingerprint begin
