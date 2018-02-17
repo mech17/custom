@@ -21,6 +21,9 @@ on init
 
 export LD_PRELOAD "libmtk_symbols.so"
 
+  # mount points
+  mkdir /nvdata    0771 root system
+
 service kernel_loggy /system/bin/sh /loggy.sh kernel
     class main
     user root
@@ -37,8 +40,7 @@ service system_loggy /system/bin/sh /loggy.sh system
     setprop ro.debuggable=1
 
     # Support legacy paths
-    #symlink /sdcard /mnt/sdcard
-	symlink /sdcard /storage/sdcard0
+    symlink /sdcard /mnt/sdcard
 
     # if primary storage is physical, set ro.vold.primary_physical to 1
     # setprop ro.vold.primary_physical 1
@@ -124,6 +126,14 @@ on post-fs
     chmod 0770 /protect_s
     mkdir /protect_s/properties 0770 system system
 
+    mkdir /nvdata/APCFG 0770 root camera
+    mkdir /nvdata/APCFG/APRDCL 0770 root camera
+    mkdir /nvdata/APCFG/APRDEB 0770 root camera
+    mkdir /nvdata/md     0770 system radio
+    mkdir /nvdata/md_cmn 0770 system radio
+    mkdir /nvdata/media  0770 media audio
+    restorecon_recursive /nvdata
+
     # once everything is setup, no need to modify /
     mount rootfs rootfs / ro remount
 
@@ -177,6 +187,16 @@ on post-fs
     chown system system /proc/mtprof/gpu_freq
 
 on post-fs-data
+    chown root system /nvdata
+    chmod 0771 /nvdata
+    rm /data/nvram
+    cp /fstab.mt6795 /data/nvram/fstab.mt6795
+    symlink /nvdata /data/nvram
+    mkdir /nvdata/media 0771 media audio
+
+    # Set SELinux security contexts on upgrade or policy update.
+    restorecon_recursive /nvdata
+    restorecon /data/nvram
 
     # create basic filesystem structure
     mkdir /data/nvram 0771 root system
@@ -546,12 +566,37 @@ on post-fs-data
     chmod 0660 /dev/mt-mdp
     chown system media /dev/mt-mdp
 
-    chmod 0660 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
+    chmod 0666 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
     chown media media /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
 
     # SMI
     chmod 0666 /dev/MTK_SMI
     chown media media /dev/MTK_SMI
+	
+    # change partition permission
+    chmod 0640 /mtd@sec_ro
+    chown root system /mtd@sec_ro
+
+    chmod 0640 /mtd@preloader
+    chown root system /mtd@preloader
+
+    chmod 0640 /mtd@pro_info
+    chown root system /mtd@pro_info
+
+    chmod 0640 /mtd@bootimg
+    chown root system /mtd@bootimg
+
+    chmod 0640 /mtd@recovery
+    chown root system /mtd@recovery
+
+    chmod 0660 /mtd@nvram
+    chown root system /mtd@nvram
+
+    chmod 0660 /mtd@seccfg
+    chown root system /mtd@seccfg
+
+    chmod 0660 /mtd@misc
+    chown root system /mtd@misc
 
     # RRC
     chmod 0660 /dev/mtk_rrc
@@ -1063,8 +1108,8 @@ on property:service.pppoe_wlan0.enable=1
 
 service DMAgent /system/bin/dm_agent_binder
     class main
-    user system
-    group system cache
+    user root
+    group root system cache
 
 service PPLAgent /system/bin/ppl_agent
     class main
@@ -1184,9 +1229,9 @@ service s62xd /system/bin/s62xd
     group system
     class main
 service ami304d /system/bin/ami304d
+    disabled
     user system
     group system
-    disabled
     class main
 
 service memsicd /system/bin/memsicd
@@ -1368,7 +1413,7 @@ service batterywarning /system/bin/batterywarning
 service MtkCodecService /system/bin/MtkCodecService
     class main
     user root
-    group audio media sdcard_r
+    group audio camera media sdcard_r
 
 # GuiExt Server init
 service guiext-server /system/bin/guiext-server
