@@ -44,7 +44,8 @@ loglevel 5
     mount tmpfs tmpfs /mnt mode=0755,uid=0,gid=1000
     restorecon_recursive /mnt
     # Support legacy paths
-    symlink /sdcard /mnt/sdcard
+    #symlink /sdcard /mnt/sdcard
+	symlink /sdcard /storage/sdcard0
 
     mkdir /mnt/secure 0700 root root
     mkdir /mnt/secure/asec 0700 root root
@@ -186,7 +187,7 @@ on post-fs-data
     installkey /data
 
 # create basic filesystem structure
-    mkdir /data/nvram 0771 root system
+    mkdir /data/nvram 2771 root system
     mkdir /data/nvram/media 0771 media audio
     mkdir /data/misc 01771 system misc
     mkdir /data/misc/adb 02750 system shell
