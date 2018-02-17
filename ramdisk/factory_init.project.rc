@@ -120,7 +120,7 @@ service wmt_loader /system/bin/wmt_loader
 	group root system wifi
 	oneshot
 
-service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
+service conn_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
     user system
     group system
 
