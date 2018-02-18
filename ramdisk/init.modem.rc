@@ -22,7 +22,7 @@ on post-fs-data
     # Encrypt phone function
     setprop vold.post_fs_data_done 1
 
-service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepeerdns nodetach
+service pppd_gprs /vendor/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepeerdns nodetach
     user root
     group radio cache inet misc
     disabled

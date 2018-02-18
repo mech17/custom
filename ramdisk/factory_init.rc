@@ -245,10 +245,8 @@ on post-fs-data
     chmod 0444 /dev/devmap
     chown root system /dev/devmap
 
-
-
     #change partition permission
-    exec /system/etc/partition_permission.sh
+    exec /vendor/etc/partition_permission.sh
 
 #INTERNAL_START
 #SeLinux
@@ -417,10 +415,10 @@ service vold /system/bin/vold \
     socket cryptd stream 0660 root mount
     ioprio be 2
 
-service debuggerd /system/bin/debuggerd
+service crash_dump32 /system/bin/crash_dump32
     class main
 
-service debuggerd64 /system/bin/debuggerd64
+service crash_dump64 /system/bin/crash_dump64
     class main
 
 # One shot invocation to deal with encrypted volume.
@@ -454,9 +452,9 @@ service logcatd /system/bin/logcat -b all -v threadtime -v usec -v printable -D 
 ## Custom service area (START)
 # Please add custom service below
 
-service factory_no_image /system/bin/factory
+service factory_no_image /vendor/bin/factory
 
-service mobile_log_d /system/bin/mobile_log_d
+service mobile_log_d /vendor/bin/mobile_log_d
 	class main
 
 ## Custom service area (END)
