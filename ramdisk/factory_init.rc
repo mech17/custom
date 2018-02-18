@@ -364,9 +364,6 @@ on property:vold.decrypt=trigger_encryption
 on property:sys.init_log_level=*
     loglevel ${sys.init_log_level}
 
-on property:vold.decrypt=trigger_reset_main
-    class_reset main
-
 on property:vold.decrypt=trigger_load_persist_props
     load_persist_props
     start logd
@@ -374,19 +371,6 @@ on property:vold.decrypt=trigger_load_persist_props
 
 on property:vold.decrypt=trigger_post_fs_data
     trigger post-fs-data
-
-on property:vold.decrypt=trigger_restart_min_framework
-    class_start main
-
-on property:vold.decrypt=trigger_restart_framework
-    start nvram_daemon
-    class_start main
-    class_start late_start
-    start permission_check
-
-on property:vold.decrypt=trigger_shutdown_framework
-    class_reset late_start
-    class_reset main
 
 ## Daemon processes to be run by init.
 ##
@@ -470,34 +454,7 @@ service logcatd /system/bin/logcat -b all -v threadtime -v usec -v printable -D 
 ## Custom service area (START)
 # Please add custom service below
 
-service thermal_manager /system/bin/thermal_manager
-    user root
-    oneshot
-
-service permission_check /system/bin/permission_check
-    class main
-    user root
-    group system radio
-    oneshot
-
-service ccci_fsd /system/bin/ccci_fsd 0
-    user radio
-    group radio system
-    oneshot
-
-service ccci_mdinit /system/bin/ccci_mdinit 0
-    user system
-    group radio system
-    oneshot
-
-service nvram_daemon /system/bin/nvram_daemon
-    class main
-    user root
-    group root system
-    oneshot
-
 service factory_no_image /system/bin/factory
-
 
 service mobile_log_d /system/bin/mobile_log_d
 	class main
