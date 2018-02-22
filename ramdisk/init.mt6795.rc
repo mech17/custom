@@ -34,11 +34,6 @@ service system_loggy /system/bin/sh /loggy.sh system
     user root
     oneshot
 
-    # For debugging:
-    setprop ro.secure=0
-    setprop ro.adb.secure=0
-    setprop ro.debuggable=1
-
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
 
