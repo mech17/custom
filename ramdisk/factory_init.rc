@@ -186,7 +186,7 @@ on post-fs-data
     installkey /data
 
 # create basic filesystem structure
-    mkdir /data/nvram 0771 root system
+    mkdir /data/nvram 2771 root system
     mkdir /data/nvram/media 0771 media audio
     mkdir /data/misc 01771 system misc
     mkdir /data/misc/adb 02750 system shell

@@ -194,7 +194,7 @@ on post-fs-data
     restorecon /data/nvram
 
     # create basic filesystem structure
-    mkdir /data/nvram 0771 root system
+    mkdir /data/nvram 2771 root system
     mkdir /data/nvram/media 0771 media audio
 
     # mxg2320
@@ -1108,8 +1108,8 @@ service DMAgent /system/bin/dm_agent_binder
 
 service PPLAgent /system/bin/ppl_agent
     class main
-    user system
-    group system cache
+    user root
+    group root system cache
 
 #service vtservice /system/bin/vtservice
 #    class main
