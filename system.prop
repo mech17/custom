@@ -69,6 +69,9 @@ debug.hwui.render_dirty_regions=false
 
 ro.sf.lcd_density=480
 
+#display: Disable EGL buffer_age extension support
+debug.hwui.use_buffer_age=false
+
 # performance
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_response_time=1
