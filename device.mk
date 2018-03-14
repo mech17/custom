@@ -23,7 +23,7 @@ TARGET_OTA_ASSERT_DEVICE := x3,X500,X507,X509,X3,x500,x507,x509,X502,x502
 
 # Power
 PRODUCT_PACKAGES += \
-	power.default \
+	android.hardware.power@1.0-impl \
 	power.mt6795
 
 # Camera
@@ -337,10 +337,6 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 #    android.hardware.soundtrigger@2.0-impl \
 
-# Power HAL
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
-
 #gralloc/graphics HAL/HW Composer
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -356,11 +352,11 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service
 
 # Camera HAL
-PRODUCT_PACKAGES += \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+#PRODUCT_PACKAGES += \
+#    camera.device@1.0-impl \
+#    camera.device@3.2-impl \
+#    android.hardware.camera.provider@2.4-impl \
+#    android.hardware.camera.provider@2.4-service
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
@@ -400,10 +396,19 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service
 
 # Sensors
-#PRODUCT_PACKAGES += \
-#    android.hardware.sensors@1.0-impl \
-#    android.hardware.sensors@1.0-service
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 # Drm
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-service
+
+# Fingerprint
+#PRODUCT_PACKAGES += \
+#    android.hardware.biometrics.fingerprint@2.1-service

@@ -11,4 +11,8 @@ extern "C" {
   void _ZNK7android16SensorEventQueue5getFdEv() {}
 
   void _ZNK7android16SensorEventQueue13disableSensorEPKNS_6SensorE() {}
+
+  void _ZNK7android16SensorEventQueue12enableSensorEPKNS_6SensorE() {}
+
+  void _ZNK7android16SensorEventQueue*() {}
 }

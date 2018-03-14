@@ -102,6 +102,7 @@ USE_MINIKIN := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
+WITH_LINEAGE_CHARGER := false
 
 # Offline charging
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
@@ -203,5 +204,8 @@ BOARD_BLUE_LED_PATH := "/sys/class/leds/blue"
 # SenserHal
 TARGET_SENSORS_DEVICE_API_VERSION := SENSORS_DEVICE_API_VERSION_1_1
 
-#Treble support 
+#Treble support
 PRODUCT_FULL_TREBLE := false
+
+# HIDL Manifest
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
