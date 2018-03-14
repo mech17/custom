@@ -1,7 +1,7 @@
-From c6e110505903b25c306194077579d3a2427c5926 Mon Sep 17 00:00:00 2001
+From eacabb641ecad972106d5adb099ba5368882cf05 Mon Sep 17 00:00:00 2001
 From: danielhk <daniel.p6800@gmail.com>
 Date: Sat, 23 Dec 2017 12:50:50 +0800
-Subject: [PATCH 5/7] libsuspend:Add earlysuspend support
+Subject: [PATCH] libsuspend:Add earlysuspend support
 
 Old kernels require earlysusupend support.
 ---
