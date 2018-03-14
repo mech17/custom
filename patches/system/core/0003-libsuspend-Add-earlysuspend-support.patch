@@ -1,7 +1,7 @@
-From eacabb641ecad972106d5adb099ba5368882cf05 Mon Sep 17 00:00:00 2001
+From 95f321c072aef9d860a54286b50ee38de2db8fbb Mon Sep 17 00:00:00 2001
 From: danielhk <daniel.p6800@gmail.com>
 Date: Sat, 23 Dec 2017 12:50:50 +0800
-Subject: [PATCH] libsuspend:Add earlysuspend support
+Subject: [PATCH 3/3] libsuspend:Add earlysuspend support
 
 Old kernels require earlysusupend support.
 ---
@@ -12,7 +12,7 @@ Old kernels require earlysusupend support.
  create mode 100644 libsuspend/autosuspend_earlysuspend.c
 
 diff --git a/libsuspend/Android.bp b/libsuspend/Android.bp
-index 130800ed8..40e753332 100644
+index 130800e..40e7533 100644
 --- a/libsuspend/Android.bp
 +++ b/libsuspend/Android.bp
 @@ -6,6 +6,7 @@ cc_library {
@@ -24,7 +24,7 @@ index 130800ed8..40e753332 100644
      ],
      export_include_dirs: ["include"],
 diff --git a/libsuspend/autosuspend.c b/libsuspend/autosuspend.c
-index 96e1c10d0..54730c293 100644
+index 96e1c10..54730c2 100644
 --- a/libsuspend/autosuspend.c
 +++ b/libsuspend/autosuspend.c
 @@ -34,6 +34,19 @@ static int autosuspend_init(void)
@@ -49,7 +49,7 @@ index 96e1c10d0..54730c293 100644
          goto out;
 diff --git a/libsuspend/autosuspend_earlysuspend.c b/libsuspend/autosuspend_earlysuspend.c
 new file mode 100644
-index 000000000..579de5227
+index 0000000..579de52
 --- /dev/null
 +++ b/libsuspend/autosuspend_earlysuspend.c
 @@ -0,0 +1,218 @@
@@ -272,5 +272,5 @@ index 000000000..579de5227
 +    return NULL;
 +}
 -- 
-2.11.0
+2.7.4
 
