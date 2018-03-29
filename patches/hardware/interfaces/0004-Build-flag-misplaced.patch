@@ -1,7 +1,7 @@
-From 3b66bc1c8ae77d4b8934668c76127d150a26307b Mon Sep 17 00:00:00 2001
+From 2e8c58608604b843e896d24f8f69986822a2b4a9 Mon Sep 17 00:00:00 2001
 From: danielhk <daniel.p6800@gmail.com>
 Date: Sat, 16 Dec 2017 19:42:51 +0800
-Subject: [PATCH 5/5] Build flag misplaced
+Subject: [PATCH 4/4] Build flag misplaced
 
 Build flag SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG is for the shared library not
 service.
@@ -10,7 +10,7 @@ service.
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/audio/2.0/default/Android.mk b/audio/2.0/default/Android.mk
-index 84ca6e3c..78077ea0 100644
+index 84ca6e3..78077ea 100644
 --- a/audio/2.0/default/Android.mk
 +++ b/audio/2.0/default/Android.mk
 @@ -51,6 +51,10 @@ LOCAL_HEADER_LIBRARIES := \
@@ -34,5 +34,5 @@ index 84ca6e3c..78077ea0 100644
 -
  include $(BUILD_EXECUTABLE)
 -- 
-2.14.1
+2.7.4
 
