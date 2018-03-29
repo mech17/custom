@@ -275,7 +275,6 @@ PRODUCT_COPY_FILES += \
 
 # MTK Helpers
 PRODUCT_PACKAGES += \
-	libccci_util \
 	libmtk_symbols
 
 # Sensor Calibration
@@ -411,3 +410,9 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 #PRODUCT_PACKAGES += \
 #    android.hardware.biometrics.fingerprint@2.1-service
+
+# RIL
+PRODUCT_PACKAGES += \
+    libccci_util \
+    libril \
+    rild
